@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: "full"},
   {path: 'home', component: HomeComponent},
   {path: 'listings', component: ListListingComponent},
-  {path: 'add-listings', component: AddListingComponent},
+  {path: 'add-listing', component: AddListingComponent},
 ];
 
 export const AppRouting = RouterModule.forRoot(routes);
