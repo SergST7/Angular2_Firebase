@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {AngularFireModule} from "angularfire2";
+import {
+  AngularFireModule,
+  AuthProviders,
+  AuthMethods
+} from "angularfire2";
 
 import {AppRouting} from "./app.routing";
 
@@ -17,7 +21,13 @@ import { ListListingComponent } from './components/list-listing/list-listing.com
 import {FirebaseService} from "./services/firebase.service";
 
 
-export const fbConfig = {
+
+const fbAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Popup
+}
+
+const fbConfig = {
   apiKey: "AIzaSyBq8h1b0GlLcVstcOr0IdBfrXj4bek5OmQ",
   authDomain: "property-listing-c4d57.firebaseapp.com",
   databaseURL: "https://property-listing-c4d57.firebaseio.com",
@@ -41,7 +51,7 @@ export const fbConfig = {
     FormsModule,
     HttpModule,
     AppRouting,
-    AngularFireModule.initializeApp(fbConfig)
+    AngularFireModule.initializeApp(fbConfig, fbAuthConfig)
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
