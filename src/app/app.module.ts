@@ -14,6 +14,8 @@ import { AddListingComponent } from './components/add-listing/add-listing.compon
 import { EditListingComponent } from './components/edit-listing/edit-listing.component';
 import { ListListingComponent } from './components/list-listing/list-listing.component';
 
+import {FirebaseService} from "./services/firebase.service";
+
 
 export const fbConfig = {
   apiKey: "AIzaSyBq8h1b0GlLcVstcOr0IdBfrXj4bek5OmQ",
@@ -41,7 +43,7 @@ export const fbConfig = {
     AppRouting,
     AngularFireModule.initializeApp(fbConfig)
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
