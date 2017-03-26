@@ -21,7 +21,7 @@ export class ListingComponent implements OnInit {
     //get item
     this.fbService.getListingDetail(this.id).subscribe(item => {
       this.listing = item;
-      console.log(item)
+      // console.log(item)
     })
 
   }
