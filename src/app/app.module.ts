@@ -7,6 +7,7 @@ import {
   AuthProviders,
   AuthMethods
 } from "angularfire2";
+import {FlashMessagesModule} from "angular2-flash-messages";
 
 import {AppRouting} from "./app.routing";
 
@@ -50,6 +51,7 @@ const fbConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    FlashMessagesModule,
     AppRouting,
     AngularFireModule.initializeApp(fbConfig, fbAuthConfig)
   ],
