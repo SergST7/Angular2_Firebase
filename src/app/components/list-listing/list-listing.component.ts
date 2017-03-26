@@ -13,7 +13,7 @@ export class ListListingComponent implements OnInit {
 
   ngOnInit() {
     this.fireBaseService.getListings().subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.listings = data
     })
   }

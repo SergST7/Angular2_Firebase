@@ -24,7 +24,7 @@ export class FirebaseService {
   }
 
   getListingDetail(id){
-    this.listing = this.af.database.object('/listings'+id) as FirebaseObjectObservable<Listing>;
+    this.listing = this.af.database.object('/listings/'+id) as FirebaseObjectObservable<Listing>;
     return this.listing
   }
 }
