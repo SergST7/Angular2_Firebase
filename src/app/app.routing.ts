@@ -6,12 +6,14 @@ import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./components/home/home.component";
 import {ListListingComponent} from "./components/list-listing/list-listing.component";
 import {AddListingComponent} from "./components/add-listing/add-listing.component";
+import {ListingComponent} from "./components/listing/listing.component";
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: "full"},
   {path: 'home', component: HomeComponent},
   {path: 'listings', component: ListListingComponent},
+  {path: 'listing/:id', component: ListingComponent},
   {path: 'add-listing', component: AddListingComponent},
 ];
 
