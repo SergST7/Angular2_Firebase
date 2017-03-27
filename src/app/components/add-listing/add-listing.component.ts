@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-listing.component.css']
 })
 export class AddListingComponent implements OnInit {
+  title: any;
+  city: any;
+  owner: any;
+  bedrooms: any;
+  type: any;
+  image: any;
+  price: any;
 
   constructor() { }
 
