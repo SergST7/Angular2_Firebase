@@ -20,11 +20,11 @@ export class FirebaseService {
   folder: any;
 
   constructor(private af: AngularFire, ) {
-    this.folder = 'listing-images'
+    this.folder = 'listing-images';
+    this.listings = this.af.database.list('/listings') as FirebaseListObservable<Listing[]>;
   }
 
   getListings(){
-    this.listings = this.af.database.list('/listings') as FirebaseListObservable<Listing[]>;
     return this.listings
   }
 
@@ -46,6 +46,10 @@ export class FirebaseService {
         return this.listings.push(listing)
       })
     }
+  }
+
+  updateListing(id, listing){
+    this.listings.update(id, listing)
   }
 }
 

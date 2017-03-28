@@ -44,9 +44,7 @@ export class EditListingComponent implements OnInit {
       price: this.price
     }
 
-    this.fbService.updateListing(this.id, listing){
-
-    }
+    this.fbService.updateListing(this.id, listing);
 
     this.router.navigate(['/listings'])
   }
