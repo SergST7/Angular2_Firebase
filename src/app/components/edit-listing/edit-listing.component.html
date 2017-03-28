@@ -1,3 +1,37 @@
-<p>
-  edit-listing works!
-</p>
+<a [routerLink]="['/listings']" >Back</a>
+<hr>
+<h2 class="page-header">Edit Listing</h2>
+<form (submit)="onEditSubmit()">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" id="title" [(ngModel)]="title"  class="form-control" name="title" required>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input type="text" id="city" [(ngModel)]="city" class="form-control" name="city" required>
+  </div>
+  <div class="form-group">
+    <label for="owner">Owner</label>
+    <input type="text" id="owner"  [(ngModel)]="owner" class="form-control" name="owner" required>
+  </div>
+  <div class="form-group">
+    <label for="bedrooms">Bedrooms</label>
+    <input type="text" id="bedrooms" [(ngModel)]="bedrooms" class="form-control" name="bedrooms" required>
+  </div>
+  <div class="form-group">
+    <label for="type">Title</label>
+    <select type="text" id="type" class="form-control" [(ngModel)]="type"  name="type">
+      <option value="Estate">Estate</option>
+      <option value="Condo">Condo</option>
+      <option value="Apartment">Apartment</option>
+    </select>
+  </div>
+  <!--<div class="form-group">-->
+    <!--<input type="file" id="image"  [(ngModel)]="image"  name="image" multiple required>-->
+  <!--</div>-->
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" id="price" class="form-control" [(ngModel)]="price"  name="price" required>
+  </div>
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

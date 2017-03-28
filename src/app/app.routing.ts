@@ -7,6 +7,7 @@ import {HomeComponent} from "./components/home/home.component";
 import {ListListingComponent} from "./components/list-listing/list-listing.component";
 import {AddListingComponent} from "./components/add-listing/add-listing.component";
 import {ListingComponent} from "./components/listing/listing.component";
+import {EditListingComponent} from "./components/edit-listing/edit-listing.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'listings', component: ListListingComponent},
   {path: 'listing/:id', component: ListingComponent},
+  {path: 'edit-listing/:id', component: EditListingComponent},
   {path: 'add-listing', component: AddListingComponent},
 ];
 
