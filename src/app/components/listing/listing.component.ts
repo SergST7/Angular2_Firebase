@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FirebaseService} from "../../services/firebase.service";
 import * as firebase from 'firebase';
 
@@ -14,6 +14,7 @@ export class ListingComponent implements OnInit {
   imageUrl: any;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private fbService: FirebaseService) { }
 
   ngOnInit() {
@@ -28,11 +29,17 @@ export class ListingComponent implements OnInit {
       //create ref for firebase storage
       let storageRef = firebase.storage().ref();
       let imgRef = storageRef.child(item.path);
-      imgRef.getDownloadURL().then( url => {
+      imgRef.getDownloadURL().then(url => {
         this.imageUrl = url
       }).catch(error => console.error(error));
       // console.log(item)
-    })
-
+    });
   }
+
+    onDelete(){
+      this.fbService.deleteListing(this.id);
+      this.router.navigate(['/home'])
+    }
+
+
 }

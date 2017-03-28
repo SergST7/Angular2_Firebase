@@ -49,7 +49,11 @@ export class FirebaseService {
   }
 
   updateListing(id, listing){
-    this.listings.update(id, listing)
+    return this.listings.update(id, listing)
+  }
+
+  deleteListing(id){
+    return this.listings.remove(id)
   }
 }
 
